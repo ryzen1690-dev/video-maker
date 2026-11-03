@@ -1,0 +1,95 @@
+:root {
+  --paper: #eef1f6;
+  --ink: #14213d;
+  --muted: #5b6577;
+  --line: #cfd6e3;
+  --rec: #e63946;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Sora", system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 28px 18px 60px;
+  display: grid;
+  gap: 32px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 820px) {
+  main { grid-template-columns: 1fr 340px; align-items: start; }
+}
+
+h1 { font-size: 2rem; line-height: 1.15; margin: 0 0 8px; font-weight: 800; }
+.lead { color: var(--muted); margin: 0 0 22px; max-width: 46ch; }
+
+label { display: block; font-weight: 600; margin: 18px 0 6px; }
+
+textarea, input[type="file"], input[type="text"] {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  padding: 10px 12px;
+}
+
+textarea { resize: vertical; }
+
+button {
+  margin-top: 22px;
+  background: var(--rec);
+  color: #fff;
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 28px;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+button:disabled { opacity: 0.55; cursor: progress; }
+button:focus-visible, a:focus-visible, textarea:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+
+#status { color: var(--muted); min-height: 1.5em; }
+
+.phone {
+  background: var(--ink);
+  border-radius: 28px;
+  padding: 10px;
+  width: min(100%, 340px);
+  margin: 0 auto;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  border-radius: 20px;
+  background: #000;
+}
+
+#result { margin-top: 18px; text-align: center; }
+#result video { width: min(100%, 340px); border-radius: 12px; background: #000; }
+
+.dl {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  border: 2px solid var(--ink);
+  color: var(--ink);
+  font-weight: 800;
+  text-decoration: none;
+}
